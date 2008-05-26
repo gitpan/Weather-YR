@@ -1,6 +1,10 @@
 Revision history for Perl extension Weather::YR.
 
-0.20  Sat Apr 24 17:21:31 2008
+0.21  Mon May 26 09:15:05 2008
+    - Fix: Wrong package names in SEE ALSO
+    - Fix: Missing SYNOPSIS of central packages
+
+0.20  Sat May 24 17:21:31 2008
     - Rebranded from YR to Weather::YR
 
 0.11  Wed Apr 30 09:07:26 2008

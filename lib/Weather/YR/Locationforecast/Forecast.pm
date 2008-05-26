@@ -62,6 +62,8 @@ __PACKAGE__->mk_accessors(qw/
 
 =head1 SEE ALSO
 
+L<Weather::YR::Locationforecast>
+
 =head1 AUTHOR
 
 Knut-Olav, E<lt>knut-olav@hoven.wsE<gt>

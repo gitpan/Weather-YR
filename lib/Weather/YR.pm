@@ -26,7 +26,7 @@ our @EXPORT = qw(
 	
 );
 
-our $VERSION = '0.20';
+our $VERSION = '0.21';
 
 
 # Preloaded methods go here.
@@ -43,8 +43,39 @@ Weather::YR - Perl extension for talking to yr.no
 =head1 SYNOPSIS
 
   use Weather::YR;
-  use Weather::YR::Locationforecast
-  use Weather::YR::Textforecast
+
+  #
+  # Location forecast
+  #
+  use Weather::YR::Locationforecast;
+
+  my $loc   = Weather::YR::Locationforecast->new(
+    {
+        'latitude'      => '59.6327',
+        'longitude'     => '10.2468',
+    }
+  );
+
+  my $loc_forecast = $loc->forecast;
+
+  print $loc_forecast->[0]->{'temperature'}->{'value'} . " degrees celcius";
+
+
+  #
+  # Text forecast
+  #
+  use Weather::YR::Textforecast;
+
+  my $text  = Weather::YR::Textforecast->new(
+    {
+        'language'  => 'nb',
+        'forecast'  => 'land',
+    }
+  );
+
+  $text_forecast    = $text->forecast;  
+
+  print $text_forecast->{'title'};
 
 =head1 DESCRIPTION
 
@@ -58,7 +89,7 @@ None by default.
 
 =head1 SEE ALSO
 
-L<Weather::YR::Locationforecast>, L<Textforecast>
+L<Weather::YR::Locationforecast>, L<Weather::YR::Textforecast>
 
 =head1 AUTHOR
 

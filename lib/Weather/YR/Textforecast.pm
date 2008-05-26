@@ -16,6 +16,21 @@ use base 'Weather::YR::Base';
 
 Weather::YR::Textforecast - Used to fetch text based forecast from YR
 
+=head1 SYNOPSIS
+
+  use Weather::YR::Textforecast;
+
+  my $text  = Weather::YR::Textforecast->new(
+    {
+        'language'  => 'nb',
+        'forecast'  => 'land',
+    }
+  );
+
+  $text_forecast    = $text->forecast;  
+
+  print $text_forecast->{'title'};
+
 =head1 DESCRIPTION
 
 This module returns textforecasts from YR according to specified parameters.
@@ -231,7 +246,7 @@ sub get_url {
 
 =head1 SEE ALSO
 
-L<YR>
+L<Weather::YR>, L<Weather::YR::Base>
 
 =head1 AUTHOR
 

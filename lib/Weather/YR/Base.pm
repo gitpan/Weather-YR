@@ -122,6 +122,8 @@ sub merge_config {
 
 =head1 SEE ALSO
 
+L<Weather::YR>
+
 =head1 AUTHOR
 
 Knut-Olav, E<lt>knut-olav@hoven.wsE<gt>

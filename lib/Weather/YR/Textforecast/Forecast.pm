@@ -38,6 +38,8 @@ __PACKAGE__->mk_accessors(qw/type/);
 
 =head1 SEE ALSO
 
+L<Weather::YR::Textforecast>
+
 =head1 AUTHOR
 
 Knut-Olav, E<lt>knut-olav@hoven.wsE<gt>

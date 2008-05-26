@@ -36,6 +36,8 @@ __PACKAGE__->mk_accessors(qw/
 
 =head1 SEE ALSO
 
+L<Weather::YR::Locationforecast>, L<Weather::YR::Locationforecast::Forecast>
+
 =head1 AUTHOR
 
 Knut-Olav, E<lt>knut-olav@hoven.wsE<gt>

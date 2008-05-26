@@ -20,6 +20,21 @@ use base 'Weather::YR::Base';
 
 Weather::YR::Locationforecast - Used to fetch forecast from a geo position from YR
 
+=head1 SYNOPSIS
+
+  use Weather::YR::Locationforecast
+
+  my $loc   = Weather::YR::Locationforecast->new(
+    {
+        'latitude'      => '59.6327',
+        'longitude'     => '10.2468',
+    }
+  );
+
+  my $loc_forecast = $loc->forecast;
+
+  print $loc_forecast->[0]->{'temperature'}->{'value'} . " degrees celcius";
+
 =head1 DESCRIPTION
 
 This module returns textforecasts from YR according to specified parameters.
@@ -275,7 +290,7 @@ sub get_url {
 
 =head1 SEE ALSO
 
-L<YR>
+L<Weather::YR>, L<Weather::YR::Base>
 
 =head1 AUTHOR
 
