@@ -1,5 +1,8 @@
 Revision history for Perl extension Weather::YR.
 
+0.22  Thu May 29 09:25:22 2008
+    - Fix: Added prerequisites to Makefile.PL
+
 0.21  Mon May 26 09:15:05 2008
     - Fix: Wrong package names in SEE ALSO
     - Fix: Missing SYNOPSIS of central packages
