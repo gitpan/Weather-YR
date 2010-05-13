@@ -7,6 +7,7 @@ WriteMakefile(
     VERSION_FROM      => 'lib/Weather/YR.pm', # finds $VERSION
     PREREQ_PM         => {
             'AutoLoader'                => 0, #5.63,
+            'Class::Accessor::Fast'     => 0, #0.31,
             'Data::Dumper'              => 0, #2.121,
             'DateTime'                  => 0, #0.35,
             'DateTime::Format::ISO8601' => 0, #0.06,

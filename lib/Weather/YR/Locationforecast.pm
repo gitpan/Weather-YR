@@ -40,7 +40,7 @@ Weather::YR::Locationforecast - Used to fetch forecast from a geo position from 
 This module returns textforecasts from YR according to specified parameters.
 
 This module uses the data from URLs such as these:
- http://api.yr.no/weatherapi/locationforecast/1.4/?lat=60.10;lon=9.58
+ http://api.yr.no/weatherapi/locationforecast/1.5/?lat=60.10;lon=9.58
 
 =head2 DESCRIPTION FROM YR API
 
@@ -58,7 +58,7 @@ remaining five 24-hour periods, they are spaces three hours apart.
 =head2 url
 
 The URL to the web service for getting the textforecasts. Defaults to version
-1.4 of the API: B<http://api.yr.no/weatherapi/locationforecast/1.4/>.
+1.5 of the API: B<http://api.yr.no/weatherapi/locationforecast/1.5/>.
 
 =head2 latitude
 
@@ -71,7 +71,7 @@ The longitude of the location. No default, must be applied in constructor.
 =cut
 
 __PACKAGE__->config(
-    'url'       => 'http://api.yr.no/weatherapi/locationforecast/1.4/',
+    'url'       => 'http://api.yr.no/weatherapi/locationforecast/1.5/',
 );
 
 

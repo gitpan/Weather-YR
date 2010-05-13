@@ -38,7 +38,8 @@ default configuration in L</%CONFIG>.
 sub new {
     my ( $class, $args ) = @_;
 
-    my %config  = %CONFIG;
+    my $config  = $CONFIG{$class} || {};
+    my %config  = %$config;
     my $self    = bless \%config, $class;
 
     $self->merge_config($args);
@@ -53,8 +54,18 @@ Sets default package configuration values.
 =cut
 
 sub config {
-    my ($class, %args) = @_;
-    @CONFIG{keys %args} = values %args;
+    my ($self, %args) = @_;
+
+    if (ref $self) {
+        $self->merge_config(\%args);
+    }
+    else {
+        my $class = $self;
+        $CONFIG{$class} ||= {};
+        while (my ($key, $value) = each %args) {
+            $CONFIG{$class}{$key} = $value;
+        }
+    }
 }
 
 =head2 fetch

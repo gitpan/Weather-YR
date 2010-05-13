@@ -1,6 +1,7 @@
 .includepath
 .project
 Changes
+doc/example/1.5/locationforecast-sande.xml
 doc/example/locationforecast-sande.xml
 doc/example/textforecast-land.xml
 lib/Weather/YR.pm
@@ -18,7 +19,9 @@ LICENSE
 Makefile.PL
 MANIFEST			This list of files
 README
+t/multi-forecast-config-override.t
 t/Weather-YR-Base.t
+t/Weather-YR-Locationforecast-1.5.t
 t/Weather-YR-Locationforecast.t
 t/Weather-YR-Parser.t
 t/Weather-YR-Textforecast.t
