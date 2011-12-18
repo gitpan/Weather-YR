@@ -10,7 +10,7 @@ BEGIN { use_ok('Weather::YR::Locationforecast') };
 
 #########################
 
-my $xml_file    = 'doc/example/1.5/locationforecast-sande.xml';
+my $xml_file    = 'doc/example/1.8/locationforecast.xml';
 -f $xml_file or die "File doesnt exist: $xml_file";
 
 # Doesn't really matter what coordinates we enter here, we will read the
@@ -20,13 +20,13 @@ my $l_forecast = Weather::YR::Locationforecast->new(
         # Geo codes for Sande (VE.)
         'latitude'  => '59.6327',
         'longitude' => '10.2468',
-        'url'       => 'http://api.yr.no/weatherapi/locationforecast/1.5/',
+        'url'       => 'http://api.yr.no/weatherapi/locationforecast/1.8/',
     }
 );
 
 is(
     $l_forecast->get_url,
-    'http://api.yr.no/weatherapi/locationforecast/1.5/?lon=10.2468&lat=59.6327',
+    'http://api.yr.no/weatherapi/locationforecast/1.8/?lon=10.2468&lat=59.6327',
     'Assemble URL with latitude and longitude'
 );
 
@@ -42,8 +42,8 @@ isa_ok(
 );
 
 my $forecast        = $parsed_ref->[0];
-my $forecast_precip = $parsed_ref->[5];
-my $forecast_symbol = $parsed_ref->[6];
+my $forecast_precip = $parsed_ref->[2];
+my $forecast_symbol = $parsed_ref->[1];
 
 # All forecasts should be of type Weather::YR::Locationforecast::Forecast
 isa_ok(

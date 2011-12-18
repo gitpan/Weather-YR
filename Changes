@@ -1,5 +1,9 @@
 Revision history for Perl extension Weather::YR.
 
+0.24  Sun Dec 18 13:56:56 2011
+    - Fix: YR API Location Forecast updated to version 1.8.
+    - Fix: YR API Text Forecast updated to version 1.5.
+
 0.23  Thu May 13 16:45:19 2010
     - Fix: Missing dependency declaration on Class::Accessor::Fast.
     - Fix: Configuration overrides were leaking when

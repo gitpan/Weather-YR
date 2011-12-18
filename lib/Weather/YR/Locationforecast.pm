@@ -144,10 +144,11 @@ sub parse_weatherdata {
     my $meta = $ref->{'meta'}->[0];
 
     foreach my $time (@{ $ref->{'product'}->[0]->{'time'} }) {
-        my $forecast_ref = $self->parse_forecast_time($time);
-        $forecast_ref->meta($meta);
-        
-        push @forecasts, $forecast_ref;
+        my @forecast_refs = $self->parse_forecast_time($time);
+        for my $forecast_ref (@forecast_refs) {
+            $forecast_ref->meta($meta);
+            push @forecasts, $forecast_ref;
+        }
     }
 
     return \@forecasts;
@@ -177,20 +178,28 @@ sub parse_forecast_time {
             'altitude'      => $location->{'altitude'},
         },
     );
+
+
+    my @forecasts;
     
     my $forecast_ref = Weather::YR::Locationforecast::Forecast->new(\%forecast);
     
     if (exists $location->{'symbol'}) {
-        $forecast_ref = parse_forecast_symbol($forecast_ref, $location);
+        push @forecasts, parse_forecast_symbol($forecast_ref, $location);
     }
-    elsif (exists $location->{'precipitation'}) {
-        $forecast_ref = parse_forecast_precip($forecast_ref, $location);
+
+    if (exists $location->{'precipitation'}) {
+        push @forecasts, parse_forecast_precip($forecast_ref, $location);
     }
-    elsif (exists $location->{'fog'}) { # just to test a value
+
+    if (exists $location->{'fog'}) { # just to test a value
         $forecast_ref = parse_forecast_full($forecast_ref, $location);
+        push @forecasts, $forecast_ref;
     }
+
+    push @forecasts, $forecast_ref unless length @forecasts;
     
-    return $forecast_ref;
+    return @forecasts;
 }
 
 =head2 parse_forecast_full(C<$location>)

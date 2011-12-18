@@ -4,6 +4,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME              => 'Weather::YR',
+    LICENSE           => 'perl',
     VERSION_FROM      => 'lib/Weather/YR.pm', # finds $VERSION
     PREREQ_PM         => {
             'AutoLoader'                => 0, #5.63,
@@ -21,5 +22,5 @@ WriteMakefile(
 
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Weather/YR.pm', # retrieve abstract from module
-       AUTHOR         => 'Knut-Olav Hoven <knut-olav@hoven.ws>') : ()),
+       AUTHOR         => 'Knut-Olav Hoven <knutolav@gmail.com>') : ()),
 );
