@@ -197,7 +197,7 @@ sub parse_forecast_time {
         push @forecasts, $forecast_ref;
     }
 
-    push @forecasts, $forecast_ref unless length @forecasts;
+    push @forecasts, $forecast_ref unless @forecasts;
     
     return @forecasts;
 }

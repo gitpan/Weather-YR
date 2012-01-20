@@ -1,5 +1,8 @@
 Revision history for Perl extension Weather::YR.
 
+0.25  Fri Jan 20 18:50:58 2011
+    - Fix: CPAN issue #74112: Misuse of length on array
+
 0.24  Sun Dec 18 13:56:56 2011
     - Fix: YR API Location Forecast updated to version 1.8.
     - Fix: YR API Text Forecast updated to version 1.5.

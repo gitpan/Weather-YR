@@ -99,8 +99,7 @@ sub get_ua {
     $ua->env_proxy;
 
     my $version = $Weather::YR::VERSION;
-    $ua->agent(sprintf('Perl YR/%s ', $version));
-
+    $ua->agent(sprintf('Perl Weather::YR/%s ', $version));
 
     return $ua;
 }
