@@ -1,6 +1,6 @@
 # NAME
 
-Weather::Yr - Object-oriented interface to the Yr.no weather service.
+Weather::YR - Object-oriented interface to the Yr.no weather service.
 
 # VERSION
 
@@ -8,10 +8,10 @@ Version 0.01.
 
 # SYNOPSIS
 
-    use Weather::Yr;
+    use Weather::YR;
     use DateTime::TimeZone;
 
-    my $yr = Weather::Yr->new(
+    my $yr = Weather::YR->new(
         lat => 63.590833,
         lon => 10.741389,
         tz  => DateTime::TimeZone->new( name => 'Europe/Oslo' ),
@@ -49,7 +49,7 @@ This is an object-oriented interface to Yr.no's free weather service located at
 
 ## location\_forecast
 
-Returns a [Weather::Yr::LocationForecast](https://metacpan.org/pod/Weather::Yr::LocationForecast) instance.
+Returns a [Weather::YR::LocationForecast](https://metacpan.org/pod/Weather::YR::LocationForecast) instance.
 
 # TODO
 

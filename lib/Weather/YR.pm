@@ -1,30 +1,30 @@
-package Weather::Yr;
+package Weather::YR;
 use Moose;
 use namespace::autoclean;
 
-extends 'Weather::Yr::Base';
+extends 'Weather::YR::Base';
 
-use Weather::Yr::LocationForecast;
-use Weather::Yr::TextLocation;
+use Weather::YR::LocationForecast;
+use Weather::YR::TextLocation;
 
 =head1 NAME
 
-Weather::Yr - Object-oriented interface to the Yr.no weather service.
+Weather::YR - Object-oriented interface to YR.no's weather service.
 
 =head1 VERSION
 
-Version 0.01.
+Version 0.30.
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.30';
 
 =head1 SYNOPSIS
 
-    use Weather::Yr;
+    use Weather::YR;
     use DateTime::TimeZone;
 
-    my $yr = Weather::Yr->new(
+    my $yr = Weather::YR->new(
         lat => 63.590833,
         lon => 10.741389,
         tz  => DateTime::TimeZone->new( name => 'Europe/Oslo' ),
@@ -55,26 +55,26 @@ our $VERSION = '0.01';
 
 ** THIS IS PRE-ALPHA! DO NOT USE IN PRODUCTION! INTERFACE WILL CHANGE! **
 
-This is an object-oriented interface to Yr.no's free weather service located at
+This is an object-oriented interface to YR.no's free weather service located at
 L<http://api.yr.no/>.
 
 =cut
 
-has 'location_forecast' => ( isa => 'Weather::Yr::LocationForecast', is => 'ro', lazy_build => 1 );
-# has 'text_location'     => ( isa => 'Weather::Yr::TextLocation',     is => 'ro', lazy_build => 1 );
+has 'location_forecast' => ( isa => 'Weather::YR::LocationForecast', is => 'ro', lazy_build => 1 );
+# has 'text_location'     => ( isa => 'Weather::YR::TextLocation',     is => 'ro', lazy_build => 1 );
 
 =head1 METHODS
 
 =head2 location_forecast
 
-Returns a L<Weather::Yr::LocationForecast> instance.
+Returns a L<Weather::YR::LocationForecast> instance.
 
 =cut
 
 sub _build_location_forecast {
     my $self = shift;
 
-    return Weather::Yr::LocationForecast->new(
+    return Weather::YR::LocationForecast->new(
         lat  => $self->lat,
         lon  => $self->lon,
         msl  => $self->msl,
@@ -87,7 +87,7 @@ sub _build_location_forecast {
 # sub _build_text_location {
 #     my $self = shift;
 
-#     return Weather::Yr::TextLocation->new(
+#     return Weather::YR::TextLocation->new(
 #         lat  => $self->lat,
 #         lon  => $self->lon,
 #         lang => $self->lang,

@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker ;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Object-oriented interface to Yr.no's weather service.",
+  "ABSTRACT" => "Object-oriented interface to YR.no's weather service.",
   "AUTHOR" => "Tore Aursand <toreau\@gmail.com>",
   "BUILD_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.64"
@@ -18,10 +18,10 @@ my %WriteMakefileArgs = (
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
-  "DISTNAME" => "Weather-Yr",
+  "DISTNAME" => "Weather-YR",
   "EXE_FILES" => [],
   "LICENSE" => "perl",
-  "NAME" => "Weather::Yr",
+  "NAME" => "Weather::YR",
   "PREREQ_PM" => {
     "DateTime" => 0,
     "DateTime::Format::ISO8601" => 0,
@@ -38,7 +38,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.30",
   "test" => {
     "TESTS" => "t/*.t"
   }

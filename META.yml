@@ -1,5 +1,5 @@
 ---
-abstract: "Object-oriented interface to Yr.no's weather service."
+abstract: "Object-oriented interface to YR.no's weather service."
 author:
   - 'Tore Aursand <toreau@gmail.com>'
 build_requires:
@@ -18,7 +18,7 @@ license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
-name: Weather-Yr
+name: Weather-YR
 requires:
   DateTime: '0'
   DateTime::Format::ISO8601: '0'
@@ -27,4 +27,4 @@ requires:
   Moose: '0'
   XML::Bare: '0'
   namespace::autoclean: '0'
-version: '0.01'
+version: '0.30'
