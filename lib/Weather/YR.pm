@@ -13,11 +13,11 @@ Weather::YR - Object-oriented interface to YR.no's weather service.
 
 =head1 VERSION
 
-Version 0.30.
+Version 0.31.
 
 =cut
 
-our $VERSION = '0.30';
+our $VERSION = '0.31';
 
 =head1 SYNOPSIS
 
@@ -55,7 +55,7 @@ our $VERSION = '0.30';
 
 ** THIS IS PRE-ALPHA! DO NOT USE IN PRODUCTION! INTERFACE WILL CHANGE! **
 
-This is an object-oriented interface to YR.no's free weather service located at
+This is an object-oriented interface to Yr.no's free weather service located at
 L<http://api.yr.no/>.
 
 =cut
@@ -112,12 +112,19 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 BUGS
 
-Please report any bugs or feature requests via the github interface at
-L<https://github.com/toreau/Weather-Yr/issues>.
+Please report any bugs or feature requests via the web interface at
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=Weather-YR>, or via
+the github interface at L<https://github.com/toreau/Weather-YR/issues>.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
-Tore Aursand, C<< toreau@gmail.com >>
+=over 4
+
+=item * Tore Aursand, 2014-, C<< toreau@gmail.com >>
+
+=item * Knut-Olav Hoven, 2008-2014, C<< knut-olav@hoven.ws >>
+
+=back
 
 =head1 LICENSE AND COPYRIGHT
 

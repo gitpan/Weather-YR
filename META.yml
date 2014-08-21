@@ -7,7 +7,7 @@ build_requires:
   File::Slurp: '0'
   FindBin: '0'
   Test::More: '0.98'
-  perl: '5.006'
+  perl: '5.010'
   strict: '0'
   warnings: '0'
 configure_requires:
@@ -27,4 +27,5 @@ requires:
   Moose: '0'
   XML::Bare: '0'
   namespace::autoclean: '0'
-version: '0.30'
+  perl: '5.010'
+version: '0.31'

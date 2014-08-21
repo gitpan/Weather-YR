@@ -10,13 +10,15 @@ use DateTime::Format::ISO8601;
 use Weather::YR::LocationForecast::DataPoint;
 use Weather::YR::LocationForecast::Day;
 
-use Weather::YR::Model::Clouds;
-use Weather::YR::Model::Dewpoint;
+use Weather::YR::Model::Cloudiness;
+use Weather::YR::Model::DewPointTemperature;
 use Weather::YR::Model::Fog;
 use Weather::YR::Model::Humidity;
 use Weather::YR::Model::Precipitation::Symbol;
 use Weather::YR::Model::Precipitation;
 use Weather::YR::Model::Pressure;
+use Weather::YR::Model::Probability::Temperature;
+use Weather::YR::Model::Probability::Wind;
 use Weather::YR::Model::Temperature;
 use Weather::YR::Model::WindDirection;
 use Weather::YR::Model::WindSpeed;
@@ -31,6 +33,8 @@ forecast" API.
 Don't use this class directly. Instead, access it from the L<Weather::YR> class.
 
 =cut
+
+has 'status_code' => ( isa => 'Num', is => 'rw', required => 0 );
 
 has 'url'        => ( isa => 'Str',                                                is => 'ro', lazy_build => 1 );
 has 'datapoints' => ( isa => 'ArrayRef[Weather::YR::LocationForecast::DataPoint]', is => 'ro', lazy_build => 1 );
@@ -125,14 +129,11 @@ sub _build_datapoints {
                     hPa  => $loc->{pressure}->{value}->{value},
                 ),
 
-                clouds => Weather::YR::Model::Clouds->new(
-                    from       => $from,
-                    to         => $to,
-                    lang       => $self->lang,
-                    cloudiness => $loc->{cloudiness}->{percent}->{value},
-                    low        => $loc->{lowClouds}->{percent}->{value},
-                    medium     => $loc->{mediumClouds}->{percent}->{value},
-                    high       => $loc->{highClouds}->{percent}->{value},
+                cloudiness => Weather::YR::Model::Cloudiness->new(
+                    from    => $from,
+                    to      => $to,
+                    lang    => $self->lang,
+                    percent => $loc->{cloudiness}->{percent}->{value},
                 ),
 
                 fog => Weather::YR::Model::Fog->new(
@@ -142,11 +143,25 @@ sub _build_datapoints {
                     percent => $loc->{fog}->{percent}->{value},
                 ),
 
-                dewpoint => Weather::YR::Model::Dewpoint->new(
+                dew_point_temperature => Weather::YR::Model::DewPointTemperature->new(
                     from    => $from,
                     to      => $to,
                     lang    => $self->lang,
                     celsius => $loc->{dewpointTemperature}->{value}->{value},
+                ),
+
+                temperature_probability => Weather::YR::Model::Probability::Temperature->new(
+                    from => $from,
+                    to   => $to,
+                    lang => $self->lang,
+                    value => $loc->{temperatureProbability}->{value}->{value},
+                ),
+
+                wind_probability => Weather::YR::Model::Probability::Wind->new(
+                    from => $from,
+                    to   => $to,
+                    lang => $self->lang,
+                    value => $loc->{windProbability}->{value}->{value},
                 ),
             );
         }

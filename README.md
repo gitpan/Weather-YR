@@ -1,10 +1,10 @@
 # NAME
 
-Weather::YR - Object-oriented interface to the Yr.no weather service.
+Weather::YR - Object-oriented interface to YR.no's weather service.
 
 # VERSION
 
-Version 0.01.
+Version 0.30.
 
 # SYNOPSIS
 
@@ -53,13 +53,14 @@ Returns a [Weather::YR::LocationForecast](https://metacpan.org/pod/Weather::YR::
 
 # TODO
 
-- Add time zone support.
+- Improve the documentation.
+- Add more tests.
 - Add support for more of Yr.no's APIs.
 
 # BUGS
 
 Please report any bugs or feature requests via the github interface at
-[https://github.com/toreau/Weather-Yr/issues](https://github.com/toreau/Weather-Yr/issues).
+[https://github.com/toreau/Weather-YR/issues](https://github.com/toreau/Weather-YR/issues).
 
 # AUTHOR
 
