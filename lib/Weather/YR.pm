@@ -13,11 +13,11 @@ Weather::YR - Object-oriented interface to YR.no's weather service.
 
 =head1 VERSION
 
-Version 0.31.
+Version 0.32.
 
 =cut
 
-our $VERSION = '0.31';
+our $VERSION = '0.32';
 
 =head1 SYNOPSIS
 
@@ -32,8 +32,7 @@ our $VERSION = '0.31';
 
     foreach my $day ( @{$yr->location_forecast->days} ) {
         say $day->date . ':';
-        say ' ' x 4 . 'Min. temperature = ' . $day->min_temperature->celsius;
-        say ' ' x 4 . 'Max. temperature = ' . $day->max_temperature->celsius;
+        say ' ' x 4 . 'Temperature = ' . $day->temperature->celsius;
 
         foreach my $dp ( @{$day->datapoints} ) {
             say ' ' x 4 . 'Wind direction: ' . $dp->wind_direction->name;
@@ -108,6 +107,8 @@ __PACKAGE__->meta->make_immutable;
 
 =item * Add support for more of Yr.no's APIs.
 
+=item * Translate wind speed names/descriptions.
+
 =back
 
 =head1 BUGS
@@ -128,7 +129,7 @@ the github interface at L<https://github.com/toreau/Weather-YR/issues>.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2014, Tore Aursand.
+Copyright 2014, ABC Startsiden.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the Artistic License (2.0). You may obtain a

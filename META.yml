@@ -28,4 +28,4 @@ requires:
   XML::Bare: '0'
   namespace::autoclean: '0'
   perl: '5.010'
-version: '0.31'
+version: '0.32'

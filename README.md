@@ -4,7 +4,7 @@ Weather::YR - Object-oriented interface to YR.no's weather service.
 
 # VERSION
 
-Version 0.30.
+Version 0.32.
 
 # SYNOPSIS
 
@@ -19,8 +19,7 @@ Version 0.30.
 
     foreach my $day ( @{$yr->location_forecast->days} ) {
         say $day->date . ':';
-        say ' ' x 4 . 'Min. temperature = ' . $day->min_temperature->celsius;
-        say ' ' x 4 . 'Max. temperature = ' . $day->max_temperature->celsius;
+        say ' ' x 4 . 'Temperature = ' . $day->temperature->celsius;
 
         foreach my $dp ( @{$day->datapoints} ) {
             say ' ' x 4 . 'Wind direction: ' . $dp->wind_direction->name;
@@ -56,19 +55,22 @@ Returns a [Weather::YR::LocationForecast](https://metacpan.org/pod/Weather::YR::
 - Improve the documentation.
 - Add more tests.
 - Add support for more of Yr.no's APIs.
+- Translate wind speed names/descriptions.
 
 # BUGS
 
-Please report any bugs or feature requests via the github interface at
-[https://github.com/toreau/Weather-YR/issues](https://github.com/toreau/Weather-YR/issues).
+Please report any bugs or feature requests via the web interface at
+[https://rt.cpan.org/Public/Dist/Display.html?Name=Weather-YR](https://rt.cpan.org/Public/Dist/Display.html?Name=Weather-YR), or via
+the github interface at [https://github.com/toreau/Weather-YR/issues](https://github.com/toreau/Weather-YR/issues).
 
-# AUTHOR
+# AUTHORS
 
-Tore Aursand, `toreau@gmail.com`
+- Tore Aursand, 2014-, `toreau@gmail.com`
+- Knut-Olav Hoven, 2008-2014, `knut-olav@hoven.ws`
 
 # LICENSE AND COPYRIGHT
 
-Copyright 2014, Tore Aursand.
+Copyright 2014, ABC Startsiden.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the Artistic License (2.0). You may obtain a
